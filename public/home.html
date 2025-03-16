@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Oriented Academy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #002b0f;
+            color: #eaeaea;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #0a4713, #064b00);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #0a470f;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 a {
+            text-decoration: none;
+            color: #b6ff8a;
+            font-size: 2em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        header h1 a:hover {
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #b6ff8a;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #00a839;
+            color: #fff;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('goa.png.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            color: #b6ff8a;
+            text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #eaeaea;
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        .join {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #005d2a, #0a2653);
+        }
+
+        .join h2 {
+            font-size: 3em;
+            color: #b6ff8a;
+            margin-bottom: 20px;
+        }
+
+        .join p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .join .join-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #076168;
+            background-color: #42d456;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid black;
+        }
+
+        .join .join-btn:hover {
+            background-color: #025547;
+            color: #eaeaea;
+        }
+
+        .content {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 20px;
+            background: rgba(0, 128, 0, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .section h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #b6ff8a;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            color: #ddd;
+            text-align: justify;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.5);
+        }
+
+        footer {
+            background-color: #004d1a;
+            padding: 20px;
+            text-align: center;
+            color: #b6ff8a;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    /* .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .image-container {
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .image-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.5);
+    } */
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><a href="home.html">GOA</a></h1>
+    <nav>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Welcome to Goal Oriented Academy</h2>
+    <p>Your path to mastering programming and web development starts here.</p>
+</section>
+
+<section class="join">
+    <h2>Join GOA Today</h2>
+    <p>Message the Founder and Start Becoming the Best Version of Yourself!</p>
+    <a href="https://www.facebook.com/nika11keshelava" class="join-btn">Join GOA</a>
+</section>
+
+<div class="content">
+    <div class="section" id="about">
+        <h3>Why Learn Programming?</h3>
+        <p>In a world driven by technology and automation, programming is no longer just a skill—it’s a necessity. From artificial intelligence (AI) and cybersecurity to web development, blockchain, and data science, coding powers nearly every industry.
+
+            As AI continues to reshape jobs, those who understand how to develop, control, and improve technology will be in the highest demand. Future careers will rely heavily on automation, machine learning, robotics, and software development, making programming one of the most valuable skills to secure high-paying, future-proof jobs.
+            
+            Tech giants like Google, Tesla, and OpenAI are investing billions into AI and automation, revolutionizing industries like healthcare, finance, space exploration, and entertainment. Those who can code, adapt, and innovate will lead the way in building the future.
+            
+            Beyond career opportunities, coding enhances problem-solving, critical thinking, and creativity. It allows you to turn ideas into reality—whether it’s developing AI-driven applications, securing global networks, or creating life-changing software.
+            
+            In the digital age, learning to program isn’t just an advantage—it’s a necessity for those who want to shape the future rather than be left behind.
+            </p>
+    </div>
+
+    <div class="section" id="services">
+        <h3>Our Services</h3>
+        <p>We provide hands-on training, mentorship, and a supportive community to help you reach your goals. Whether you're a beginner or an experienced developer, our courses will guide you through the learning process.</p>
+    </div>
+
+    <div class="section" id="contact">
+        <h3>Contact Us</h3>
+        <p>For more information about our programs, reach out to us via email at info@goalorientedacademy.com or call us at 123-456-7890.</p>
+    </div>
+</div>
+<!-- <section class="gallery">
+    <div class="image-container">
+        <img src="goa.png.jpg" alt="GOA">
+    </div>
+    <div class="image-container">
+        <img src="Screenshot 2025-03-16 045236.png" alt="GOA">
+    </div>
+    <div class="image-container">
+        <img src="452113171_476523915130909_6975325151100170335_n (1).jpg" alt="GOA">
+    </div>
+</section> -->
+
+</div>
+</body>
+</html>
